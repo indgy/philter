@@ -7,7 +7,7 @@ Philter will apply each filter and return the required scalar type by calling th
 ### toString()
 
 ```php
-"abcc-123.456" = philter("abc-123.456")->toString();
+"123.456" = philter(123.456)->toString();
 ```
 
 ### toInt()
@@ -21,28 +21,35 @@ Philter will apply each filter and return the required scalar type by calling th
 ```php
 123.456 === philter("123.456")->toFloat();
 ```
+`toFloat()` also accepts a decimal precision:
+
+```php
+123.46 === philter("123.456789")->toFloat(2);
+```
+
 
 ### toBool()
 
 ```php
 true === philter("1")->toBool();
 ```
+### Reusing filters
 
-The input is never modified so it is possible to reuse filters and return a different type:
+The input is never modified so it is possible to reuse filters, add new filters and return different types:
 
 ```php
 $filter = philter("1")->digits(); 
 
-"1" === $filter->toString();
+"1" === $filter->numeric()->toString();
 true === $filter->toBool();
 ```
 
 ### Returning a default value
 If the input does not pass through a filter, a null value will be returned to the to*() method. Use the `default()` method to specify a default value to return;
 
-
-
-
+```php
+50 = philter("abc")->digits()->default(50)->toInt(); 
+```
 
 ## String filters
 

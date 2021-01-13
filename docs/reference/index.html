@@ -66,6 +66,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#tobool">toBool()</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reusing-filters">Reusing filters</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#returning-a-default-value">Returning a default value</a>
     </li>
         </ul>
@@ -155,7 +157,7 @@
 <h2 id="return-methods">Return methods</h2>
 <p>Philter will apply each filter and return the required scalar type by calling the to*() methods, call one of these methods after you have specified your filters:</p>
 <h3 id="tostring">toString()</h3>
-<pre><code class="language-php">&quot;abcc-123.456&quot; = philter(&quot;abc-123.456&quot;)-&gt;toString();
+<pre><code class="language-php">&quot;123.456&quot; = philter(123.456)-&gt;toString();
 </code></pre>
 <h3 id="toint">toInt()</h3>
 <pre><code class="language-php">123 = philter(&quot;123.456&quot;)-&gt;toInt();
@@ -163,17 +165,23 @@
 <h3 id="tofloat">toFloat()</h3>
 <pre><code class="language-php">123.456 === philter(&quot;123.456&quot;)-&gt;toFloat();
 </code></pre>
+<p><code>toFloat()</code> also accepts a decimal precision:</p>
+<pre><code class="language-php">123.46 === philter(&quot;123.456789&quot;)-&gt;toFloat(2);
+</code></pre>
 <h3 id="tobool">toBool()</h3>
 <pre><code class="language-php">true === philter(&quot;1&quot;)-&gt;toBool();
 </code></pre>
-<p>The input is never modified so it is possible to reuse filters and return a different type:</p>
+<h3 id="reusing-filters">Reusing filters</h3>
+<p>The input is never modified so it is possible to reuse filters, add new filters and return different types:</p>
 <pre><code class="language-php">$filter = philter(&quot;1&quot;)-&gt;digits(); 
 
-&quot;1&quot; === $filter-&gt;toString();
+&quot;1&quot; === $filter-&gt;numeric()-&gt;toString();
 true === $filter-&gt;toBool();
 </code></pre>
 <h3 id="returning-a-default-value">Returning a default value</h3>
 <p>If the input does not pass through a filter, a null value will be returned to the to*() method. Use the <code>default()</code> method to specify a default value to return;</p>
+<pre><code class="language-php">50 = philter(&quot;abc&quot;)-&gt;digits()-&gt;default(50)-&gt;toInt(); 
+</code></pre>
 <h2 id="string-filters">String filters</h2>
 <p>The following filters accept any string or numeric input.</p>
 <h3 id="allow">allow()</h3>
