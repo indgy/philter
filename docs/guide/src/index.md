@@ -31,7 +31,7 @@ $str = filter($unsafe_input)
 
 
 ## Custom filters
-	You may define custom filters using the `apply()` method with a closure which accepts the variable being filtered:
+	You may define one-off custom filters using the `apply()` method with a closure which accepts the variable being filtered:
 
 ```php
 filter($string)->apply(function($v) {
@@ -42,6 +42,10 @@ filter($string)->apply(function($v) {
 })->toString();
 ```
 
-## Documentation
-See the documentation or browse the API docs for more details. 
+## Available filters
+
+### String
+### Numeric
+### Range
+### Regex
 

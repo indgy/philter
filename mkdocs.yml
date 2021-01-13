@@ -1,0 +1,26 @@
+site_name: Philter Docs
+site_description: Documentation for Philter
+copyright: ©2021 Ian Grindley
+use_directory_urls: true
+docs_dir: docs/guide/src
+site_dir: docs/guide/site
+extra_css: 
+  - style.css
+plugins:
+  - search
+  - simple:
+      include_folders: ["src"]
+      ignore_folders: [""]
+      ignore_hidden: True
+      include_extensions: [".jpeg", ".jpg", ".png", ".pdf"]
+      merge_docs_dir: True
+markdown_extensions:
+  - admonition
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+  - php
+nav:
+- Introduction: index.md
+- Reference: reference.md
