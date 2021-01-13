@@ -1,29 +1,32 @@
 ![Philter Logo](https://raw.githubusercontent.com/indgy/philter/main/docs/philter.svg)
+##### A PHP fluent input sanitiser.
 
-##### A PHP  fluent input sanitiser.
+Philter accepts untrusted input, passes it through some filters and returns it back to you. It is not a substitution for validation.
 
 ## Installation
 
-Install using composer:
+Copy the `src/Philter.php` file to your project, or install using composer:
 
 ```sh
 composer require indgy/philter
 ```
 
 ## Getting started
-Philter is extremely simple to use, just call the class padding in your untrusted input, combine the filters and finally call `toFloat()`, `toInt()` or `toString()`: 
+Create a new Philter instance passing in the untrusted input, then combine filters for the untrusted input to pass through and finally call `toFloat()`, `toInt()` or `toString()` to get the filtered and now trusted input.
 
 ```php
+use \Indgy\Philter;
+
 $f = new Philter($unsafe_input);
 $str = $f->in(['safe','string','options'])
 	->default('safe')
 	->toString();
 ```
 
-There is a cleaner function shortcut which returns a new Philter instance:
+There is also a handy shortcut function to return a new Philter instance:
 
 ```php
-use function \Indgy\filter;
+use function \Indgy\philter;
 
 $str = philter($unsafe_input)
 	->in(['safe','string','options'])
@@ -31,12 +34,13 @@ $str = philter($unsafe_input)
 	->toString();
 ```
 
+Refer to the [user guide](https://indgy.github.io/philter/index.html) to view the available filters.
 
 ## Custom filters
-	You may define one-off custom filters using the `apply()` method with a closure which accepts the variable being filtered:
+Define custom filters using the `apply()` method with a closure. The closure will be passed the current input value and expects it, or null to be returned.
 
 ```php
-filter($string)->apply(function($v) {
+philter('Here we go.. ')->apply(function($v) {
 	// do your thing here
 	$v = $v.=  'I was philtered';
 	// always return $v or null
@@ -44,10 +48,6 @@ filter($string)->apply(function($v) {
 })->toString();
 ```
 
-## Available filters
-
-### String
-### Numeric
-### Range
-### Regex
+## Documentation
+Refer to the [user guide](https://indgy.github.io/philter/index.html) or browse the [API ](https://indgy.github.io/philter/api/index.html) .
 
