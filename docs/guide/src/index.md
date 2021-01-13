@@ -23,7 +23,9 @@ $str = $f->in(['safe','string','options'])
 There is a cleaner function shortcut which returns a new Philter instance:
 
 ```php
-$str = filter($unsafe_input)
+use function \Indgy\filter;
+
+$str = philter($unsafe_input)
 	->in(['safe','string','options'])
 	->default('safe')
 	->toString();

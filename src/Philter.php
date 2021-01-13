@@ -114,3 +114,10 @@ class Philter
         return (string) $this->process();
     }
 }
+
+/**
+ * @return Indgy\Philter
+ */
+function philter($var): Philter {
+    return new Philter($var);
+}
