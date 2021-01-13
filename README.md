@@ -1,4 +1,4 @@
-![philter.svg](https://github.com/indgy/philter/docs/philter.svg)
+![https://github.com/indgy/philter/docs/philter.svg](Philter)
 # Philter
 A fluent input sanitiser.
 
