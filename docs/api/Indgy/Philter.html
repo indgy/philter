@@ -82,8 +82,8 @@
     
 
             <div class="description">
-            <p>Philter is a fluent input sanitising class.</p>            <p>Use it by chaining methods together, finally calling toString() or toInt()
-which will return the input having applied all the filters.</p>                    </div>
+            <p>A PHP fluent input sanitiser.</p>            <p>Philter will sanitise any untrusted scalar value by chaining methods together,
+finally calling toString() toInt() or toFloat() to return the filtered input.</p>                    </div>
     
     
     
@@ -98,8 +98,7 @@ which will return the input having applied all the filters.</p>                 
                 <div class="col-md-8 type">
                     <a href="#method___construct">__construct</a>(scalar $var, bool $raw = false)
         
-                                            <p class="no-description">No description</p>
-                                    </div>
+                                            <p>The constructor requires the untrusted input.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -297,9 +296,29 @@ which will return the input having applied all the filters.</p>                 
                     <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_trim">trim</a>(string $char = &#039; &#039;)
+                    <a href="#method_trim">trim</a>(string|null $char = &#039; &#039;)
         
                                             <p>Trims the leading and trailing characters from the variable</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ltrim">ltrim</a>(string $char = &#039; &#039;)
+        
+                                            <p>Trims the leftmost character matching $char</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_rtrim">rtrim</a>(string $char = &#039; &#039;)
+        
+                                            <p>Trims the rightmost character matching $char</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -340,7 +359,7 @@ which will return the input having applied all the filters.</p>                 
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 32</div>
+        <div class="location">at line 34</div>
         <code>                    
     <strong>__construct</strong>(scalar $var, bool $raw = false)
         </code>
@@ -349,6 +368,8 @@ which will return the input having applied all the filters.</p>                 
             
     
 
+                    <div class="method-description">
+                                    <p>The constructor requires the untrusted input.</p>                    <p>Optionally a boolean to skip trimming and removing unprintable characters</p>                            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -380,7 +401,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_toBool">
-        <div class="location">at line 73</div>
+        <div class="location">at line 75</div>
         <code>                    bool|null
     <strong>toBool</strong>()
         </code>
@@ -410,7 +431,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_toFloat">
-        <div class="location">at line 83</div>
+        <div class="location">at line 85</div>
         <code>                    float|null
     <strong>toFloat</strong>(int|null $decimals = null)
         </code>
@@ -453,7 +474,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_toInt">
-        <div class="location">at line 96</div>
+        <div class="location">at line 98</div>
         <code>                    int|null
     <strong>toInt</strong>()
         </code>
@@ -483,7 +504,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_toString">
-        <div class="location">at line 105</div>
+        <div class="location">at line 107</div>
         <code>                    string|null
     <strong>toString</strong>()
         </code>
@@ -513,7 +534,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_allow">
-        <div class="location">at line 120</div>
+        <div class="location">at line 122</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>allow</strong>(string $allowed)
         </code>
@@ -553,7 +574,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_alpha">
-        <div class="location">at line 135</div>
+        <div class="location">at line 137</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>alpha</strong>(string|null $allowed = null)
         </code>
@@ -593,7 +614,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_alphanum">
-        <div class="location">at line 145</div>
+        <div class="location">at line 147</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>alphanum</strong>(string|null $allowed = null)
         </code>
@@ -633,7 +654,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_apply">
-        <div class="location">at line 155</div>
+        <div class="location">at line 157</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>apply</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/Closure">Closure</a> $closure)
         </code>
@@ -676,7 +697,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_ascii">
-        <div class="location">at line 165</div>
+        <div class="location">at line 167</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>ascii</strong>()
         </code>
@@ -706,7 +727,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_between">
-        <div class="location">at line 205</div>
+        <div class="location">at line 207</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>between</strong>(int $min, int $max)
         </code>
@@ -751,7 +772,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_contains">
-        <div class="location">at line 219</div>
+        <div class="location">at line 221</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>contains</strong>(string $match)
         </code>
@@ -794,7 +815,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_cut">
-        <div class="location">at line 233</div>
+        <div class="location">at line 235</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>cut</strong>(int $length = 255)
         </code>
@@ -834,7 +855,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_default">
-        <div class="location">at line 247</div>
+        <div class="location">at line 249</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>default</strong>(mixed $default)
         </code>
@@ -874,7 +895,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_digits">
-        <div class="location">at line 261</div>
+        <div class="location">at line 263</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>digits</strong>(string|null $allowed = null)
         </code>
@@ -914,7 +935,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_email">
-        <div class="location">at line 273</div>
+        <div class="location">at line 275</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>email</strong>(string|null $allowed = null)
         </code>
@@ -954,7 +975,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_in">
-        <div class="location">at line 284</div>
+        <div class="location">at line 286</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>in</strong>(array $values, string $case_sensitive = false)
         </code>
@@ -1005,7 +1026,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_min">
-        <div class="location">at line 303</div>
+        <div class="location">at line 305</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>min</strong>(int $min)
         </code>
@@ -1045,7 +1066,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_max">
-        <div class="location">at line 317</div>
+        <div class="location">at line 319</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>max</strong>(int $max)
         </code>
@@ -1085,7 +1106,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_numeric">
-        <div class="location">at line 331</div>
+        <div class="location">at line 333</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>numeric</strong>(string|null $allowed = null)
         </code>
@@ -1125,9 +1146,9 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_trim">
-        <div class="location">at line 341</div>
+        <div class="location">at line 343</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
-    <strong>trim</strong>(string $char = &#039; &#039;)
+    <strong>trim</strong>(string|null $char = &#039; &#039;)
         </code>
     </h3>
     <div class="details">
@@ -1136,6 +1157,86 @@ which will return the input having applied all the filters.</p>                 
 
                     <div class="method-description">
                                     <p>Trims the leading and trailing characters from the variable</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$char</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ltrim">
+        <div class="location">at line 357</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>ltrim</strong>(string $char = &#039; &#039;)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Trims the leftmost character matching $char</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$char</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_rtrim">
+        <div class="location">at line 371</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>rtrim</strong>(string $char = &#039; &#039;)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Trims the rightmost character matching $char</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -1165,7 +1266,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_stripHtml">
-        <div class="location">at line 357</div>
+        <div class="location">at line 387</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>stripHtml</strong>()
         </code>
@@ -1195,7 +1296,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_stripTags">
-        <div class="location">at line 371</div>
+        <div class="location">at line 401</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>stripTags</strong>(string|null $allowed_tags = null)
         </code>
@@ -1238,7 +1339,7 @@ which will return the input having applied all the filters.</p>                 
             </div>
                     <div class="method-item">
                     <h3 id="method_stripUnprintable">
-        <div class="location">at line 385</div>
+        <div class="location">at line 415</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>stripUnprintable</strong>(string|null $allowed_chars = null)
         </code>

@@ -92,41 +92,41 @@
             <div class="section">
               
                 <p><img alt="Philter Logo" src="https://raw.githubusercontent.com/indgy/philter/main/docs/philter.svg" /></p>
-<h5 id="a-php-fluent-input-sanitiser">A PHP  fluent input sanitiser.</h5>
+<h5 id="a-php-fluent-input-sanitiser">A PHP fluent input sanitiser.</h5>
+<p>Philter accepts untrusted input, passes it through some filters and returns it back to you. It is not a substitution for validation.</p>
 <h2 id="installation">Installation</h2>
-<p>Install using composer:</p>
+<p>Copy the <code>src/Philter.php</code> file to your project, or install using composer:</p>
 <pre><code class="language-sh">composer require indgy/philter
 </code></pre>
 <h2 id="getting-started">Getting started</h2>
-<p>Philter is extremely simple to use, just call the class padding in your untrusted input, combine the filters and finally call <code>toFloat()</code>, <code>toInt()</code> or <code>toString()</code>: </p>
-<pre><code class="language-php">$f = new Philter($unsafe_input);
+<p>Create a new Philter instance passing in the untrusted input, then combine filters for the untrusted input to pass through and finally call <code>toFloat()</code>, <code>toInt()</code> or <code>toString()</code> to get the filtered and now trusted input.</p>
+<pre><code class="language-php">use \Indgy\Philter;
+
+$f = new Philter($unsafe_input);
 $str = $f-&gt;in(['safe','string','options'])
     -&gt;default('safe')
     -&gt;toString();
 </code></pre>
-<p>There is a cleaner function shortcut which returns a new Philter instance:</p>
-<pre><code class="language-php">use function \Indgy\filter;
+<p>There is also a handy shortcut function to return a new Philter instance:</p>
+<pre><code class="language-php">use function \Indgy\philter;
 
 $str = philter($unsafe_input)
     -&gt;in(['safe','string','options'])
     -&gt;default('safe')
     -&gt;toString();
 </code></pre>
+<p>Refer to the <a href="https://indgy.github.io/philter/reference/index.html">Reference</a> to view the available filters.</p>
 <h2 id="custom-filters">Custom filters</h2>
-<pre><code>You may define one-off custom filters using the `apply()` method with a closure which accepts the variable being filtered:
-</code></pre>
-<pre><code class="language-php">filter($string)-&gt;apply(function($v) {
+<p>Define custom filters using the <code>apply()</code> method with a closure. The closure will be passed the current input value and expects it, or null to be returned.</p>
+<pre><code class="language-php">philter('Here we go.. ')-&gt;apply(function($v) {
     // do your thing here
     $v = $v.=  'I was philtered';
     // always return $v or null
     return $v;
 })-&gt;toString();
 </code></pre>
-<h2 id="available-filters">Available filters</h2>
-<h3 id="string">String</h3>
-<h3 id="numeric">Numeric</h3>
-<h3 id="range">Range</h3>
-<h3 id="regex">Regex</h3>
+<h2 id="documentation">Documentation</h2>
+<p>Refer to the <a href="https://indgy.github.io/philter/index.html">user guide</a> or browse the <a href="https://indgy.github.io/philter/api/index.html">API </a>.</p>
               
             </div>
           </div>
@@ -182,5 +182,5 @@ $str = philter($unsafe_input)
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-01-13 14:37:49.980414+00:00
+Build Date UTC : 2021-01-13 16:26:01.975494+00:00
 -->

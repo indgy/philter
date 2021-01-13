@@ -56,6 +56,66 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Reference</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#return-methods">Return methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tostring">toString()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#toint">toInt()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tofloat">toFloat()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tobool">toBool()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#returning-a-default-value">Returning a default value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#string-filters">String filters</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#allow">allow()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ascii">ascii()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#alpha">alpha()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#alphanum">alphanum()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contains">contains()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cut">cut()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#digits">digits()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#email">email()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#in">in()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#numeric">numeric()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#trim">trim()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#numeric-filters">Numeric filters</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#between">between()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#min">min()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#max">max()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#html-filters">HTML filters</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#striphtml">stripHtml()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#striptags">stripTags()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stripattributes">stripAttributes()</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -92,6 +152,131 @@
             <div class="section">
               
                 <h1 id="reference">Reference</h1>
+<h2 id="return-methods">Return methods</h2>
+<p>Philter will apply each filter and return the required scalar type by calling the to*() methods, call one of these methods after you have specified your filters:</p>
+<h3 id="tostring">toString()</h3>
+<pre><code class="language-php">&quot;abcc-123.456&quot; = philter(&quot;abc-123.456&quot;)-&gt;toString();
+</code></pre>
+<h3 id="toint">toInt()</h3>
+<pre><code class="language-php">123 = philter(&quot;123.456&quot;)-&gt;toInt();
+</code></pre>
+<h3 id="tofloat">toFloat()</h3>
+<pre><code class="language-php">123.456 === philter(&quot;123.456&quot;)-&gt;toFloat();
+</code></pre>
+<h3 id="tobool">toBool()</h3>
+<pre><code class="language-php">true === philter(&quot;1&quot;)-&gt;toBool();
+</code></pre>
+<p>The input is never modified so it is possible to reuse filters and return a different type:</p>
+<pre><code class="language-php">$filter = philter(&quot;1&quot;)-&gt;digits(); 
+
+&quot;1&quot; === $filter-&gt;toString();
+true === $filter-&gt;toBool();
+</code></pre>
+<h3 id="returning-a-default-value">Returning a default value</h3>
+<p>If the input does not pass through a filter, a null value will be returned to the to*() method. Use the <code>default()</code> method to specify a default value to return;</p>
+<h2 id="string-filters">String filters</h2>
+<p>The following filters accept any string or numeric input.</p>
+<h3 id="allow">allow()</h3>
+<p>Removes any characters that are not in the allow list, pass the allowed characters as a regex:</p>
+<pre><code class="language-php">&quot;abccc&quot; = philter(&quot;abcccdef&quot;)-&gt;allow(&quot;a-c&quot;)-&gt;toString();
+</code></pre>
+<h3 id="ascii">ascii()</h3>
+<p>Replaces any non ASCII characters with a non accented approximation:</p>
+<pre><code class="language-php">&quot;creme brulee&quot; = philter(&quot;crème brûlée&quot;)-&gt;ascii()-&gt;toString();
+</code></pre>
+<h3 id="alpha">alpha()</h3>
+<p>Removes any non alphabetical characters:</p>
+<pre><code class="language-php">&quot;abc&quot; = philter(&quot;abc 123&quot;)-&gt;alpha()-&gt;toString();
+</code></pre>
+<p>Pass in additional allowed characters as the first argument:</p>
+<pre><code class="language-php">&quot;abc 2&quot; = philter(&quot;abc 123&quot;)-&gt;alpha(&quot;2\s&quot;)-&gt;toString();
+</code></pre>
+<h3 id="alphanum">alphanum()</h3>
+<p>Removes any non alpha-numeric characters:</p>
+<pre><code class="language-php">&quot;abc123&quot; = philter(&quot;abc-123&quot;)-&gt;alphanum()-&gt;toString();
+</code></pre>
+<p>Pass in additional allowed characters as the first argument:</p>
+<pre><code class="language-php">&quot;abc-123&quot; = philter(&quot;abc-1,2,3&quot;)-&gt;alpha(&quot;-&quot;)-&gt;toString();
+</code></pre>
+<h3 id="contains">contains()</h3>
+<p>Checks that the variable contains the string in \$match:</p>
+<pre><code class="language-php">&quot;This will pass&quot; = philter(&quot;This will pass&quot;)-&gt;contains(&quot;this&quot;)-&gt;toString();
+</code></pre>
+<p>By default this is not case sensitive, pass a Boolean true to match case:</p>
+<pre><code class="language-php">null = philter(&quot;This will not pass&quot;)-&gt;contains(&quot;this&quot;, true)-&gt;toString();
+</code></pre>
+<h3 id="cut">cut()</h3>
+<p>Shortens the length to \$len characters</p>
+<pre><code class="language-php">$str = &quot;This string is probably too long to be a title and will probably break the designers page layout&quot;;
+&quot;This string is&quot; = philter($str)-&gt;cut(15)-&gt;trim()-&gt;toString();
+</code></pre>
+<h3 id="digits">digits()</h3>
+<p>A stricter version of numeric, this removes any non numeric characters allowing only 0-9 and decimal point:</p>
+<pre><code class="language-php">123 = philter(&quot;abc-123.456&quot;)-&gt;digits()-&gt;toInt();
+123.456 = philter(&quot;abc-123.456&quot;)-&gt;digits()-&gt;toFloat();
+&quot;123.456&quot; = philter(&quot;abc-123.456&quot;)-&gt;digits()-&gt;toString();
+</code></pre>
+<p>Pass in additional allowed characters as the first argument:</p>
+<pre><code class="language-php">&quot;+15556677&quot; = philter(&quot;+1 555 6677&quot;)-&gt;digits(&quot;+\s&quot;)-&gt;toString();
+</code></pre>
+<h3 id="email">email()</h3>
+<p>Removes any characters that should not be in an email address:</p>
+<pre><code class="language-php">&quot;user@example.com&quot; = philter(&quot;[user]@!!example!!.com&quot;)-&gt;email()-&gt;toString();
+</code></pre>
+<p>Note: This is a simple filter, but probably stricter than the built in filter_var() method</p>
+<h3 id="in">in()</h3>
+<p>Ensures the input matches a value contained in the array:</p>
+<pre><code class="language-php">&quot;date&quot; = philter(&quot;date&quot;)-&gt;in([&quot;id&quot;,&quot;date&quot;,&quot;status&quot;])-&gt;toString();
+</code></pre>
+<p>By default this is not case sensitive, pass a Boolean true to match case:</p>
+<pre><code class="language-php">null = philter(&quot;date&quot;)-&gt;in([&quot;Id&quot;,&quot;Date&quot;,&quot;Status&quot;], true)-&gt;toString();
+</code></pre>
+<p>Use <code>default()</code> to return a default value if not matched:</p>
+<pre><code class="language-php">&quot;date&quot; = philter(&quot;price&quot;)-&gt;in([&quot;id&quot;,&quot;date&quot;,&quot;status&quot;])-&gt;default(&quot;date&quot;)-&gt;toString();
+</code></pre>
+<h3 id="numeric">numeric()</h3>
+<p>Removes any non numeric characters allowing common number markup such as + or - decimal points, commas, brackets and spaces:</p>
+<pre><code class="language-php">&quot;+(1) 555 4567&quot; = philter(&quot;+(1) 555 4567&quot;)-&gt;numeric()-&gt;toString();
+</code></pre>
+<p>Pass in additional allowed characters as the first argument:</p>
+<pre><code class="language-php">&quot;+(1) 555-4567&quot; = philter(&quot;+1 555-6677&quot;)-&gt;numeric(&quot;-&quot;)-&gt;toString();
+</code></pre>
+<h3 id="trim">trim()</h3>
+<p><em>See also <code>ltrim()</code> and <code>rtrim()</code></em></p>
+<p>Trims the leading and trailing characters from the variable:</p>
+<pre><code class="language-php">&quot;abcdef&quot; = philter(&quot;  abcdef  &quot;)-&gt;trim()-&gt;toString();
+</code></pre>
+<p>Pass in the character to trim as the first argument:</p>
+<pre><code class="language-php">&quot;abcdef&quot; = philter(&quot;/abcdef/&quot;)-&gt;trim(&quot;/&quot;)-&gt;toString();
+</code></pre>
+<h2 id="numeric-filters">Numeric filters</h2>
+<p>The following filters expect the input to be numeric.</p>
+<h3 id="between">between()</h3>
+<p>Ensures the input is a value between \$min and \$max</p>
+<pre><code class="language-php">45 = philter(&quot;45&quot;)-&gt;between(1, 100)-&gt;toInt();
+</code></pre>
+<h3 id="min">min()</h3>
+<p>Ensures the input is no less than the value of \$min</p>
+<pre><code class="language-php">15 = philter(&quot;15&quot;)-&gt;min(10)-&gt;toInt();
+</code></pre>
+<h3 id="max">max()</h3>
+<p>Ensures the input is no greater than the value of \$max</p>
+<pre><code class="language-php">95 = philter(&quot;95&quot;)-&gt;max(100)-&gt;toInt();
+</code></pre>
+<h2 id="html-filters">HTML filters</h2>
+<p>The following filters handle HTML filtering.</p>
+<h3 id="striphtml">stripHtml()</h3>
+<p>Removes all HTML:</p>
+<pre><code class="language-php">&quot;Hello world!&quot; = philter(&quot;&lt;h1&gt;Hello world!&lt;/h1&gt;&quot;)-&gt;stripHtml()-&gt;toString();
+</code></pre>
+<h3 id="striptags">stripTags()</h3>
+<p>Removes the majority of HTML tags and javascript leaving the basic tags:</p>
+<pre><code class="language-php">&quot;&lt;h1&gt;Hello world!&lt;/h1&gt;&quot; = philter(&quot;&lt;h1&gt;Hello world!&lt;/h1&gt;&lt;script&gt;doSomething():&lt;/script&gt;&quot;)-&gt;stripHtml()-&gt;toString();
+</code></pre>
+<h3 id="stripattributes">stripAttributes()</h3>
+<p>Removes all attributes from HTML tags:</p>
+<pre><code class="language-php">&quot;&lt;h1&gt;Hello world!&lt;/h1&gt;&quot; = philter(&quot;&lt;h1 class='big red'&gt;Hello world!&lt;/h1&gt;&quot;)-&gt;stripAttributes()-&gt;toString();
+</code></pre>
               
             </div>
           </div>

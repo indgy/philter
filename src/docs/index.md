@@ -34,7 +34,7 @@ $str = philter($unsafe_input)
 	->toString();
 ```
 
-Refer to the [user guide](https://indgy.github.io/philter/index.html) to view the available filters.
+Refer to the [Reference](https://indgy.github.io/philter/reference/index.html) to view the available filters.
 
 ## Custom filters
 Define custom filters using the `apply()` method with a closure. The closure will be passed the current input value and expects it, or null to be returned.

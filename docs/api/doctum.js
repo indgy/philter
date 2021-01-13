@@ -16,8 +16,8 @@
     };
 
     var searchIndex = [
-                        {"type":"Namespace","link":"Indgy.html","name":"Indgy","doc":"Namespace Indgy"},                                                        {"type":"Class","fromName":"Indgy","fromLink":"Indgy.html","link":"Indgy/Philter.html","name":"Indgy\\Philter","doc":"Philter is a fluent input sanitising class."},
-                                {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method___construct","name":"Indgy\\Philter::__construct","doc":""},
+                        {"type":"Namespace","link":"Indgy.html","name":"Indgy","doc":"Namespace Indgy"},                                                        {"type":"Class","fromName":"Indgy","fromLink":"Indgy.html","link":"Indgy/Philter.html","name":"Indgy\\Philter","doc":"A PHP fluent input sanitiser."},
+                                {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method___construct","name":"Indgy\\Philter::__construct","doc":"The constructor requires the untrusted input."},
         {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method_toBool","name":"Indgy\\Philter::toBool","doc":"Return the variable cast as a Boolean"},
         {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method_toFloat","name":"Indgy\\Philter::toFloat","doc":"Return the variable cast as a Float"},
         {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method_toInt","name":"Indgy\\Philter::toInt","doc":"Return the variable cast as an Integer"},
@@ -38,6 +38,8 @@
         {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method_max","name":"Indgy\\Philter::max","doc":"Filters the variable, ensuring it is no greater than the value of min"},
         {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method_numeric","name":"Indgy\\Philter::numeric","doc":"Removes any non numeric characters, allows typical number markup + or - brackets commas and decimals"},
         {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method_trim","name":"Indgy\\Philter::trim","doc":"Trims the leading and trailing characters from the variable"},
+        {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method_ltrim","name":"Indgy\\Philter::ltrim","doc":"Trims the leftmost character matching $char"},
+        {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method_rtrim","name":"Indgy\\Philter::rtrim","doc":"Trims the rightmost character matching $char"},
         {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method_stripHtml","name":"Indgy\\Philter::stripHtml","doc":"Removes all HTML"},
         {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method_stripTags","name":"Indgy\\Philter::stripTags","doc":"Removes the majority of HTML tags leaving only a basic set without attributes"},
         {"type":"Method","fromName":"Indgy\\Philter","fromLink":"Indgy/Philter.html","link":"Indgy/Philter.html#method_stripUnprintable","name":"Indgy\\Philter::stripUnprintable","doc":"Removes any unprintable characters"},
