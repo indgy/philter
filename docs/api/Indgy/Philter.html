@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Indgy\Philter | Control API</title>
+
+            <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/doctum.css">
+        <link rel="stylesheet" type="text/css" href="../fonts/doctum-font.css">
+        <script src="../js/jquery-3.5.1.slim.min.js"></script>
+        <script async defer src="../js/bootstrap.min.js"></script>
+        <script src="../js/typeahead.min.js"></script>
+        <script src="../doctum.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    </head>
+
+    <body id="class" data-name="class:Indgy_Philter" data-root-path="../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <form id="search-form" action="../search.html">
+            <span class="icon icon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">Control API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../classes.html">Classes</a></li>
+                    <li><a href="../namespaces.html">Namespaces</a></li>
+                    <li><a href="../interfaces.html">Interfaces</a></li>
+                    <li><a href="../traits.html">Traits</a></li>
+                    <li><a href="../doc-index.html">Index</a></li>
+                    <li><a href="../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../Indgy.html">Indgy</a></li><li class="backslash">\</li><li>Philter</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Philter
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Philter</strong>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Philter is a fluent input sanitising class.</p>            <p>Use it by chaining methods together, finally calling toString() or toInt()
+which will return the input having applied all the filters.</p>                    </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(scalar $var, bool $raw = false)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toBool">toBool</a>()
+        
+                                            <p>Return the variable cast as a Boolean</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    float|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toFloat">toFloat</a>(int|null $decimals = null)
+        
+                                            <p>Return the variable cast as a Float</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toInt">toInt</a>()
+        
+                                            <p>Return the variable cast as an Integer</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toString">toString</a>()
+        
+                                            <p>Return the variable cast as a String</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_allow">allow</a>(string $allowed)
+        
+                                            <p>Removes any characters that are not in the allow list</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_alpha">alpha</a>(string|null $allowed = null)
+        
+                                            <p>Removes any non alphabetical characters</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_alphanum">alphanum</a>(string|null $allowed = null)
+        
+                                            <p>Removes any non alpha-numeric characters</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_apply">apply</a>(<a target="_blank" rel="noopener" href="https://www.php.net/Closure">Closure</a> $closure)
+        
+                                            <p>Accepts a user defined closure</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_ascii">ascii</a>()
+        
+                                            <p>Removes any non-ascii characters, transliterating as necessary</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_between">between</a>(int $min, int $max)
+        
+                                            <p>Filters the variable, ensuring it is between $min and $max</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_contains">contains</a>(string $match)
+        
+                                            <p>Checks that the variable contains the string in $match</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_cut">cut</a>(int $length = 255)
+        
+                                            <p>Shortens the length to $len characters</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_default">default</a>(mixed $default)
+        
+                                            <p>Sets a default value to be returned if the variable is null</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_digits">digits</a>(string|null $allowed = null)
+        
+                                            <p>Removes any non numeric characters</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_email">email</a>(string|null $allowed = null)
+        
+                                            <p>Removes any characters that should not be in an email address.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_in">in</a>(array $values, string $case_sensitive = false)
+        
+                                            <p>Filter to check if the value is in the provided array of values</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_min">min</a>(int $min)
+        
+                                            <p>Filters the variable, ensuring it is no less than the value of min</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_max">max</a>(int $max)
+        
+                                            <p>Filters the variable, ensuring it is no greater than the value of min</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_numeric">numeric</a>(string|null $allowed = null)
+        
+                                            <p>Removes any non numeric characters, allows typical number markup + or - brackets commas and decimals</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_trim">trim</a>(string $char = &#039; &#039;)
+        
+                                            <p>Trims the leading and trailing characters from the variable</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_stripHtml">stripHtml</a>()
+        
+                                            <p>Removes all HTML</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_stripTags">stripTags</a>(string|null $allowed_tags = null)
+        
+                                            <p>Removes the majority of HTML tags leaving only a basic set without attributes</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_stripUnprintable">stripUnprintable</a>(string|null $allowed_chars = null)
+        
+                                            <p>Removes any unprintable characters</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at line 32</div>
+        <code>                    
+    <strong>__construct</strong>(scalar $var, bool $raw = false)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>scalar</td>
+                <td>$var</td>
+                <td><ul>
+<li>The variable to be filtered</li>
+</ul>
+</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$raw</td>
+                <td><ul>
+<li>If true Philter will not Automatically trim spaces and remove unprintable characters</li>
+</ul>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toBool">
+        <div class="location">at line 73</div>
+        <code>                    bool|null
+    <strong>toBool</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return the variable cast as a Boolean</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toFloat">
+        <div class="location">at line 83</div>
+        <code>                    float|null
+    <strong>toFloat</strong>(int|null $decimals = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return the variable cast as a Float</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$decimals</td>
+                <td><ul>
+<li>Limit the number of decimal places</li>
+</ul>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toInt">
+        <div class="location">at line 96</div>
+        <code>                    int|null
+    <strong>toInt</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return the variable cast as an Integer</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toString">
+        <div class="location">at line 105</div>
+        <code>                    string|null
+    <strong>toString</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return the variable cast as a String</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_allow">
+        <div class="location">at line 120</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>allow</strong>(string $allowed)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes any characters that are not in the allow list</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$allowed</td>
+                <td>= A string containing the allowed characters</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_alpha">
+        <div class="location">at line 135</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>alpha</strong>(string|null $allowed = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes any non alphabetical characters</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$allowed</td>
+                <td>= An optional string containing individual allowed characters</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_alphanum">
+        <div class="location">at line 145</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>alphanum</strong>(string|null $allowed = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes any non alpha-numeric characters</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$allowed</td>
+                <td>= An optional string containing individual allowed characters</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_apply">
+        <div class="location">at line 155</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>apply</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/Closure">Closure</a> $closure)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Accepts a user defined closure</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" rel="noopener" href="https://www.php.net/Closure">Closure</a></td>
+                <td>$closure</td>
+                <td><ul>
+<li>The user defined closure</li>
+</ul>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_ascii">
+        <div class="location">at line 165</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>ascii</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes any non-ascii characters, transliterating as necessary</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_between">
+        <div class="location">at line 205</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>between</strong>(int $min, int $max)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Filters the variable, ensuring it is between $min and $max</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$min</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$max</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_contains">
+        <div class="location">at line 219</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>contains</strong>(string $match)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Checks that the variable contains the string in $match</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$match</td>
+                <td><ul>
+<li>The string to match</li>
+</ul>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_cut">
+        <div class="location">at line 233</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>cut</strong>(int $length = 255)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Shortens the length to $len characters</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$length</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_default">
+        <div class="location">at line 247</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>default</strong>(mixed $default)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets a default value to be returned if the variable is null</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>mixed</td>
+                <td>$default</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_digits">
+        <div class="location">at line 261</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>digits</strong>(string|null $allowed = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes any non numeric characters</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$allowed</td>
+                <td>= A string containing individual allowed characters</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_email">
+        <div class="location">at line 273</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>email</strong>(string|null $allowed = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes any characters that should not be in an email address.</p>                    <p>Note: This is a simple filter, but probably stricter than the built in filter</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$allowed</td>
+                <td>= A string containing individual allowed characters</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_in">
+        <div class="location">at line 284</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>in</strong>(array $values, string $case_sensitive = false)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Filter to check if the value is in the provided array of values</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$values</td>
+                <td><ul>
+<li>The values to check</li>
+</ul>
+</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$case_sensitive</td>
+                <td><ul>
+<li>Compare values in a case sensitive</li>
+</ul>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_min">
+        <div class="location">at line 303</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>min</strong>(int $min)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Filters the variable, ensuring it is no less than the value of min</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$min</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_max">
+        <div class="location">at line 317</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>max</strong>(int $max)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Filters the variable, ensuring it is no greater than the value of min</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$max</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_numeric">
+        <div class="location">at line 331</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>numeric</strong>(string|null $allowed = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes any non numeric characters, allows typical number markup + or - brackets commas and decimals</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$allowed</td>
+                <td>= A string containing individual allowed characters</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_trim">
+        <div class="location">at line 341</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>trim</strong>(string $char = &#039; &#039;)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Trims the leading and trailing characters from the variable</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$char</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_stripHtml">
+        <div class="location">at line 357</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>stripHtml</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes all HTML</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_stripTags">
+        <div class="location">at line 371</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>stripTags</strong>(string|null $allowed_tags = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes the majority of HTML tags leaving only a basic set without attributes</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$allowed_tags</td>
+                <td><ul>
+<li>An optional set of tags to allow</li>
+</ul>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_stripUnprintable">
+        <div class="location">at line 385</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>stripUnprintable</strong>(string|null $allowed_chars = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes any unprintable characters</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$allowed_chars</td>
+                <td><ul>
+<li>An optional string containing allowed characters</li>
+</ul>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div><div id="footer">
+        Generated by <a href="https://github.com/code-lts/doctum">Doctum, a API Documentation generator and fork of Sami</a>.
+    </div></div>
+    </div>
+    </body>
+
+</html>
