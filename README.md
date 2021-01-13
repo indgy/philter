@@ -1,6 +1,6 @@
 ![Philter Logo](https://raw.githubusercontent.com/indgy/philter/main/docs/philter.svg)
 # Philter
-A fluent input sanitiser.
+A PHP fluent input sanitiser.
 
 ## Installation
 

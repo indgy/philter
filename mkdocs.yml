@@ -2,8 +2,8 @@ site_name: Philter Docs
 site_description: Documentation for Philter
 copyright: ©2021 Ian Grindley
 use_directory_urls: true
-docs_dir: docs/guide/src
-site_dir: docs/guide/site
+docs_dir: src/docs
+site_dir: docs
 extra_css: 
   - style.css
 plugins:
