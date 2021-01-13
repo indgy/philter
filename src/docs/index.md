@@ -49,5 +49,5 @@ philter('Here we go.. ')->apply(function($v) {
 ```
 
 ## Documentation
-Refer to the [user guide](https://indgy.github.io/philter/index.html) or browse the [API ](https://indgy.github.io/philter/api/index.html) .
+Refer to the [user guide](https://indgy.github.io/philter/index.html) or browse the [API ](https://indgy.github.io/philter/api/index.html).
 

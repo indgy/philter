@@ -1,17 +1,13 @@
 ![Philter Logo](https://raw.githubusercontent.com/indgy/philter/main/docs/philter.svg)
 ##### A PHP fluent input sanitiser.
-
 Philter accepts untrusted input, passes it through some filters and returns it back to you. It is not a substitution for validation.
 
 ## Installation
-
 Copy the `src/Philter.php` file to your project, or install using composer:
 
 ```sh
 composer require indgy/philter
 ```
-
-
 
 ## Getting started
 Create a new Philter instance passing in the untrusted input, then combine filters for the untrusted input to pass through and finally call `toFloat()`, `toInt()` or `toString()` to get the filtered and now trusted input.
@@ -36,9 +32,8 @@ $str = philter($unsafe_input)
 	->toString();
 ```
 
-Refer to the [documentation](https://indgy.github.io/philter/index.html) to view the available filters.
-
- 
+## Documentation
+Refer to the [user guide](https://indgy.github.io/philter/index.html) or browse the [API ](https://indgy.github.io/philter/api/index.html).
 
 ## Custom filters
 Define custom filters using the `apply()` method with a closure. The closure will be passed the current input value and expects it, or null to be returned.
@@ -50,10 +45,4 @@ philter('Here we go.. ')->apply(function($v) {
 	// always return $v or null
 	return $v;
 })->toString();
-
-
 ```
-
-## Documentation
-See the documentation or browse the API docs for more details. 
-
