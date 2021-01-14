@@ -1,15 +1,17 @@
 {
     "name": "indgy/philter",
-    "description": "A fluent input sanitiser with no dependencies",
     "type": "library",
+    "minimum-stability": "stable",
+    "description": "A fluent input sanitiser with no dependencies",
+    "keywords": ["input", "filter", "sanitiser", "sanitizer"],
+    "homepage": "https://indgy.github.io/philter/index.html",
     "license": "MIT",
     "authors": [
         {
-            "name": "Ian Grindley",
-            "email": "ian@iangrindley.co.uk"
+            "name": "indgy",
+            "email": "me@indgy.uk"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
         "PHP": "^7.1"
     },
