@@ -4,7 +4,7 @@
     "minimum-stability": "stable",
     "description": "A fluent input sanitiser without dependencies",
     "keywords": ["input", "filter", "sanitiser", "sanitizer"],
-    "homepage": "https://indgy.github.io/philter/index.html",
+    "homepage": "https://indgy.github.io/philter",
     "license": "MIT",
     "authors": [
         {
