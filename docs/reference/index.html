@@ -88,8 +88,6 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#digits">digits()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#email">email()</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#in">in()</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#numeric">numeric()</a>
@@ -227,11 +225,6 @@ true === $filter-&gt;toBool();
 <p>Pass in additional allowed characters as the first argument:</p>
 <pre><code class="language-php">&quot;+15556677&quot; = philter(&quot;+1 555 6677&quot;)-&gt;digits(&quot;+\s&quot;)-&gt;toString();
 </code></pre>
-<h3 id="email">email()</h3>
-<p>Removes any characters that should not be in an email address:</p>
-<pre><code class="language-php">&quot;user@example.com&quot; = philter(&quot;[user]@!!example!!.com&quot;)-&gt;email()-&gt;toString();
-</code></pre>
-<p>Note: This is a simple filter, but probably stricter than the built in filter_var() method</p>
 <h3 id="in">in()</h3>
 <p>Ensures the input matches a value contained in the array:</p>
 <pre><code class="language-php">&quot;date&quot; = philter(&quot;date&quot;)-&gt;in([&quot;id&quot;,&quot;date&quot;,&quot;status&quot;])-&gt;toString();

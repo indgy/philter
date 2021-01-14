@@ -118,10 +118,7 @@
 <abbr title="Indgy\Philter">Philter</abbr>::default</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
                     <dd>Sets a default value to be returned if the variable is null</dd><dt><a href="Indgy/Philter.html#method_digits">
 <abbr title="Indgy\Philter">Philter</abbr>::digits</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
-                    <dd>Removes any non numeric characters</dd>        </dl><h2 id="letterE">E</h2>
-        <dl id="indexE"><dt><a href="Indgy/Philter.html#method_email">
-<abbr title="Indgy\Philter">Philter</abbr>::email</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
-                    <dd>Removes any characters that should not be in an email address.</dd>        </dl><h2 id="letterI">I</h2>
+                    <dd>Removes any non numeric characters</dd>        </dl><h2 id="letterI">I</h2>
         <dl id="indexI"><dt><a href="Indgy/Philter.html#method_in">
 <abbr title="Indgy\Philter">Philter</abbr>::in</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
                     <dd>Filter to check if the value is in the provided array of values</dd>        </dl><h2 id="letterL">L</h2>
@@ -130,24 +127,28 @@
                     <dd>Trims the leftmost character matching $char</dd>        </dl><h2 id="letterM">M</h2>
         <dl id="indexM"><dt><a href="Indgy/Philter.html#method_min">
 <abbr title="Indgy\Philter">Philter</abbr>::min</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
-                    <dd>Filters the variable, ensuring it is no less than the value of min</dd><dt><a href="Indgy/Philter.html#method_max">
+                    <dd>Check the input is greater than the value of max, sets var to null if less than $Min</dd><dt><a href="Indgy/Philter.html#method_max">
 <abbr title="Indgy\Philter">Philter</abbr>::max</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
-                    <dd>Filters the variable, ensuring it is no greater than the value of min</dd>        </dl><h2 id="letterN">N</h2>
+                    <dd>Check the input is less than the value of max, sets var to null if greater than $max</dd>        </dl><h2 id="letterN">N</h2>
         <dl id="indexN"><dt><a href="Indgy/Philter.html#method_numeric">
 <abbr title="Indgy\Philter">Philter</abbr>::numeric</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
-                    <dd>Removes any non numeric characters, allows typical number markup + or - brackets commas and decimals</dd>        </dl><h2 id="letterP">P</h2>
+                    <dd>Removes any non numeric characters, allows typical currency markup + or - commas and decimals</dd>        </dl><h2 id="letterP">P</h2>
         <dl id="indexP"><dt><a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a> &mdash; <em>Class in namespace <a href="Indgy.html">Indgy</a></em></dt>
                     <dd>A PHP fluent input sanitiser.</dd>        </dl><h2 id="letterR">R</h2>
         <dl id="indexR"><dt><a href="Indgy/Philter.html#method_rtrim">
 <abbr title="Indgy\Philter">Philter</abbr>::rtrim</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
                     <dd>Trims the rightmost character matching $char</dd>        </dl><h2 id="letterS">S</h2>
-        <dl id="indexS"><dt><a href="Indgy/Philter.html#method_stripHtml">
+        <dl id="indexS"><dt><a href="Indgy/Philter.html#method_stripAttributes">
+<abbr title="Indgy\Philter">Philter</abbr>::stripAttributes</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
+                    <dd>Removes the majority of HTML tags leaving only a basic set without attributes</dd><dt><a href="Indgy/Philter.html#method_stripHtml">
 <abbr title="Indgy\Philter">Philter</abbr>::stripHtml</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
-                    <dd>Removes all HTML</dd><dt><a href="Indgy/Philter.html#method_stripTags">
+                    <dd>Removes all HTML and javascript</dd><dt><a href="Indgy/Philter.html#method_stripJavascript">
+<abbr title="Indgy\Philter">Philter</abbr>::stripJavascript</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
+                    <dd>Removes all javascript</dd><dt><a href="Indgy/Philter.html#method_stripTags">
 <abbr title="Indgy\Philter">Philter</abbr>::stripTags</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
                     <dd>Removes the majority of HTML tags leaving only a basic set without attributes</dd><dt><a href="Indgy/Philter.html#method_stripUnprintable">
 <abbr title="Indgy\Philter">Philter</abbr>::stripUnprintable</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
-                    <dd>Removes any unprintable characters</dd>        </dl><h2 id="letterT">T</h2>
+                    <dd>Removes any unprintable characters, this filter is processed by default</dd>        </dl><h2 id="letterT">T</h2>
         <dl id="indexT"><dt><a href="Indgy/Philter.html#method_toBool">
 <abbr title="Indgy\Philter">Philter</abbr>::toBool</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
                     <dd>Return the variable cast as a Boolean</dd><dt><a href="Indgy/Philter.html#method_toFloat">
@@ -158,7 +159,10 @@
 <abbr title="Indgy\Philter">Philter</abbr>::toString</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
                     <dd>Return the variable cast as a String</dd><dt><a href="Indgy/Philter.html#method_trim">
 <abbr title="Indgy\Philter">Philter</abbr>::trim</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
-                    <dd>Trims the leading and trailing characters from the variable</dd>        </dl><h2 id="letter_">_</h2>
+                    <dd>Trims the leading and trailing characters from the variable</dd>        </dl><h2 id="letterU">U</h2>
+        <dl id="indexU"><dt><a href="Indgy/Philter.html#method_utf8">
+<abbr title="Indgy\Philter">Philter</abbr>::utf8</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
+                    <dd>Convert the string to UTF-8 transliterating if possible</dd>        </dl><h2 id="letter_">_</h2>
         <dl id="index_"><dt><a href="Indgy/Philter.html#method___construct">
 <abbr title="Indgy\Philter">Philter</abbr>::__construct</a>() &mdash; <em>Method in class <a href="Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></em></dt>
                     <dd>The constructor requires the untrusted input.</dd>        </dl>            </div><div id="footer">

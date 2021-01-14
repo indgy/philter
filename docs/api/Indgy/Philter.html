@@ -206,7 +206,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                     <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_contains">contains</a>(string $match)
+                    <a href="#method_contains">contains</a>(string $match, bool $match_case = false)
         
                                             <p>Checks that the variable contains the string in $match</p>                </div>
                 <div class="col-md-2"></div>
@@ -216,7 +216,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                     <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_cut">cut</a>(int $length = 255)
+                    <a href="#method_cut">cut</a>(int|null $length)
         
                                             <p>Shortens the length to $len characters</p>                </div>
                 <div class="col-md-2"></div>
@@ -246,17 +246,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                     <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_email">email</a>(string|null $allowed = null)
-        
-                                            <p>Removes any characters that should not be in an email address.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_in">in</a>(array $values, string $case_sensitive = false)
+                    <a href="#method_in">in</a>(array $values, string $match_case = false)
         
                                             <p>Filter to check if the value is in the provided array of values</p>                </div>
                 <div class="col-md-2"></div>
@@ -268,7 +258,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                 <div class="col-md-8 type">
                     <a href="#method_min">min</a>(int $min)
         
-                                            <p>Filters the variable, ensuring it is no less than the value of min</p>                </div>
+                                            <p>Check the input is greater than the value of max, sets var to null if less than $Min</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -278,7 +268,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                 <div class="col-md-8 type">
                     <a href="#method_max">max</a>(int $max)
         
-                                            <p>Filters the variable, ensuring it is no greater than the value of min</p>                </div>
+                                            <p>Check the input is less than the value of max, sets var to null if greater than $max</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -288,7 +278,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                 <div class="col-md-8 type">
                     <a href="#method_numeric">numeric</a>(string|null $allowed = null)
         
-                                            <p>Removes any non numeric characters, allows typical number markup + or - brackets commas and decimals</p>                </div>
+                                            <p>Removes any non numeric characters, allows typical currency markup + or - commas and decimals</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -296,7 +286,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                     <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_trim">trim</a>(string|null $char = &#039; &#039;)
+                    <a href="#method_trim">trim</a>(string|null $char = null)
         
                                             <p>Trims the leading and trailing characters from the variable</p>                </div>
                 <div class="col-md-2"></div>
@@ -306,7 +296,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                     <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_ltrim">ltrim</a>(string $char = &#039; &#039;)
+                    <a href="#method_ltrim">ltrim</a>(string|null $char = null)
         
                                             <p>Trims the leftmost character matching $char</p>                </div>
                 <div class="col-md-2"></div>
@@ -316,7 +306,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                     <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_rtrim">rtrim</a>(string $char = &#039; &#039;)
+                    <a href="#method_rtrim">rtrim</a>(string|null $char = null)
         
                                             <p>Trims the rightmost character matching $char</p>                </div>
                 <div class="col-md-2"></div>
@@ -326,9 +316,39 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                     <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
                 </div>
                 <div class="col-md-8 type">
+                    <a href="#method_utf8">utf8</a>(bool $ignore = false)
+        
+                                            <p>Convert the string to UTF-8 transliterating if possible</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_stripAttributes">stripAttributes</a>(string|null $allowed_tags = null)
+        
+                                            <p>Removes the majority of HTML tags leaving only a basic set without attributes</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
                     <a href="#method_stripHtml">stripHtml</a>()
         
-                                            <p>Removes all HTML</p>                </div>
+                                            <p>Removes all HTML and javascript</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_stripJavascript">stripJavascript</a>()
+        
+                                            <p>Removes all javascript</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -346,9 +366,9 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                     <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_stripUnprintable">stripUnprintable</a>(string|null $allowed_chars = null)
+                    <a href="#method_stripUnprintable">stripUnprintable</a>()
         
-                                            <p>Removes any unprintable characters</p>                </div>
+                                            <p>Removes any unprintable characters, this filter is processed by default</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -401,7 +421,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_toBool">
-        <div class="location">at line 75</div>
+        <div class="location">at line 76</div>
         <code>                    bool|null
     <strong>toBool</strong>()
         </code>
@@ -431,7 +451,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_toFloat">
-        <div class="location">at line 85</div>
+        <div class="location">at line 86</div>
         <code>                    float|null
     <strong>toFloat</strong>(int|null $decimals = null)
         </code>
@@ -474,7 +494,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_toInt">
-        <div class="location">at line 98</div>
+        <div class="location">at line 99</div>
         <code>                    int|null
     <strong>toInt</strong>()
         </code>
@@ -504,7 +524,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_toString">
-        <div class="location">at line 107</div>
+        <div class="location">at line 108</div>
         <code>                    string|null
     <strong>toString</strong>()
         </code>
@@ -534,7 +554,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_allow">
-        <div class="location">at line 122</div>
+        <div class="location">at line 123</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>allow</strong>(string $allowed)
         </code>
@@ -574,7 +594,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_alpha">
-        <div class="location">at line 137</div>
+        <div class="location">at line 141</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>alpha</strong>(string|null $allowed = null)
         </code>
@@ -614,7 +634,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_alphanum">
-        <div class="location">at line 147</div>
+        <div class="location">at line 151</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>alphanum</strong>(string|null $allowed = null)
         </code>
@@ -654,7 +674,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_apply">
-        <div class="location">at line 157</div>
+        <div class="location">at line 161</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>apply</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/Closure">Closure</a> $closure)
         </code>
@@ -697,7 +717,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_ascii">
-        <div class="location">at line 167</div>
+        <div class="location">at line 171</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>ascii</strong>()
         </code>
@@ -727,7 +747,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_between">
-        <div class="location">at line 207</div>
+        <div class="location">at line 216</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>between</strong>(int $min, int $max)
         </code>
@@ -772,9 +792,9 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_contains">
-        <div class="location">at line 221</div>
+        <div class="location">at line 234</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
-    <strong>contains</strong>(string $match)
+    <strong>contains</strong>(string $match, bool $match_case = false)
         </code>
     </h3>
     <div class="details">
@@ -792,6 +812,14 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                 <td>$match</td>
                 <td><ul>
 <li>The string to match</li>
+</ul>
+</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$match_case</td>
+                <td><ul>
+<li>Set true to match case</li>
 </ul>
 </td>
             </tr>
@@ -815,9 +843,9 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_cut">
-        <div class="location">at line 235</div>
+        <div class="location">at line 255</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
-    <strong>cut</strong>(int $length = 255)
+    <strong>cut</strong>(int|null $length)
         </code>
     </h3>
     <div class="details">
@@ -831,9 +859,12 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
 
                     <table class="table table-condensed">
                     <tr>
-                <td>int</td>
+                <td>int|null</td>
                 <td>$length</td>
-                <td></td>
+                <td><ul>
+<li>The number of characters to leave in the string</li>
+</ul>
+</td>
             </tr>
             </table>
 
@@ -855,7 +886,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_default">
-        <div class="location">at line 249</div>
+        <div class="location">at line 276</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>default</strong>(mixed $default)
         </code>
@@ -895,7 +926,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_digits">
-        <div class="location">at line 263</div>
+        <div class="location">at line 290</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>digits</strong>(string|null $allowed = null)
         </code>
@@ -934,50 +965,10 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_email">
-        <div class="location">at line 275</div>
-        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
-    <strong>email</strong>(string|null $allowed = null)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Removes any characters that should not be in an email address.</p>                    <p>Note: This is a simple filter, but probably stricter than the built in filter</p>                            </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string|null</td>
-                <td>$allowed</td>
-                <td>= A string containing individual allowed characters</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
                     <h3 id="method_in">
-        <div class="location">at line 286</div>
+        <div class="location">at line 301</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
-    <strong>in</strong>(array $values, string $case_sensitive = false)
+    <strong>in</strong>(array $values, string $match_case = false)
         </code>
     </h3>
     <div class="details">
@@ -1000,7 +991,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </tr>
                     <tr>
                 <td>string</td>
-                <td>$case_sensitive</td>
+                <td>$match_case</td>
                 <td><ul>
 <li>Compare values in a case sensitive</li>
 </ul>
@@ -1026,7 +1017,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_min">
-        <div class="location">at line 305</div>
+        <div class="location">at line 321</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>min</strong>(int $min)
         </code>
@@ -1036,7 +1027,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
     
 
                     <div class="method-description">
-                                    <p>Filters the variable, ensuring it is no less than the value of min</p>                                                </div>
+                                    <p>Check the input is greater than the value of max, sets var to null if less than $Min</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -1044,7 +1035,10 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                     <tr>
                 <td>int</td>
                 <td>$min</td>
-                <td></td>
+                <td><ul>
+<li>The lowest value allowed to pass through the filter</li>
+</ul>
+</td>
             </tr>
             </table>
 
@@ -1066,7 +1060,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_max">
-        <div class="location">at line 319</div>
+        <div class="location">at line 338</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>max</strong>(int $max)
         </code>
@@ -1076,7 +1070,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
     
 
                     <div class="method-description">
-                                    <p>Filters the variable, ensuring it is no greater than the value of min</p>                                                </div>
+                                    <p>Check the input is less than the value of max, sets var to null if greater than $max</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -1084,7 +1078,10 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
                     <tr>
                 <td>int</td>
                 <td>$max</td>
-                <td></td>
+                <td><ul>
+<li>The highest value allowed to pass through the filter</li>
+</ul>
+</td>
             </tr>
             </table>
 
@@ -1106,7 +1103,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_numeric">
-        <div class="location">at line 333</div>
+        <div class="location">at line 355</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>numeric</strong>(string|null $allowed = null)
         </code>
@@ -1116,7 +1113,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
     
 
                     <div class="method-description">
-                                    <p>Removes any non numeric characters, allows typical number markup + or - brackets commas and decimals</p>                                                </div>
+                                    <p>Removes any non numeric characters, allows typical currency markup + or - commas and decimals</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -1146,9 +1143,9 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_trim">
-        <div class="location">at line 343</div>
+        <div class="location">at line 365</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
-    <strong>trim</strong>(string|null $char = &#039; &#039;)
+    <strong>trim</strong>(string|null $char = null)
         </code>
     </h3>
     <div class="details">
@@ -1186,9 +1183,9 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_ltrim">
-        <div class="location">at line 357</div>
+        <div class="location">at line 383</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
-    <strong>ltrim</strong>(string $char = &#039; &#039;)
+    <strong>ltrim</strong>(string|null $char = null)
         </code>
     </h3>
     <div class="details">
@@ -1202,7 +1199,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$char</td>
                 <td></td>
             </tr>
@@ -1226,9 +1223,9 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_rtrim">
-        <div class="location">at line 371</div>
+        <div class="location">at line 401</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
-    <strong>rtrim</strong>(string $char = &#039; &#039;)
+    <strong>rtrim</strong>(string|null $char = null)
         </code>
     </h3>
     <div class="details">
@@ -1242,7 +1239,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$char</td>
                 <td></td>
             </tr>
@@ -1265,8 +1262,94 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_utf8">
+        <div class="location">at line 419</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>utf8</strong>(bool $ignore = false)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Convert the string to UTF-8 transliterating if possible</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$ignore</td>
+                <td><ul>
+<li>Discard unrepresentable charcters</li>
+</ul>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_stripAttributes">
+        <div class="location">at line 445</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>stripAttributes</strong>(string|null $allowed_tags = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes the majority of HTML tags leaving only a basic set without attributes</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$allowed_tags</td>
+                <td><ul>
+<li>An optional set of tags to allow</li>
+</ul>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_stripHtml">
-        <div class="location">at line 387</div>
+        <div class="location">at line 470</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>stripHtml</strong>()
         </code>
@@ -1276,7 +1359,37 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
     
 
                     <div class="method-description">
-                                    <p>Removes all HTML</p>                                                </div>
+                                    <p>Removes all HTML and javascript</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_stripJavascript">
+        <div class="location">at line 482</div>
+        <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
+    <strong>stripJavascript</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Removes all javascript</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -1296,7 +1409,7 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_stripTags">
-        <div class="location">at line 401</div>
+        <div class="location">at line 500</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
     <strong>stripTags</strong>(string|null $allowed_tags = null)
         </code>
@@ -1339,9 +1452,9 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
             </div>
                     <div class="method-item">
                     <h3 id="method_stripUnprintable">
-        <div class="location">at line 415</div>
+        <div class="location">at line 520</div>
         <code>                    <a href="../Indgy/Philter.html"><abbr title="Indgy\Philter">Philter</abbr></a>
-    <strong>stripUnprintable</strong>(string|null $allowed_chars = null)
+    <strong>stripUnprintable</strong>()
         </code>
     </h3>
     <div class="details">
@@ -1349,21 +1462,8 @@ finally calling toString() toInt() or toFloat() to return the filtered input.</p
     
 
                     <div class="method-description">
-                                    <p>Removes any unprintable characters</p>                                                </div>
+                                    <p>Removes any unprintable characters, this filter is processed by default</p>                                                </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string|null</td>
-                <td>$allowed_chars</td>
-                <td><ul>
-<li>An optional string containing allowed characters</li>
-</ul>
-</td>
-            </tr>
-            </table>
-
             
                             <h4>Return Value</h4>
 
