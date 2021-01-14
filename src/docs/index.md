@@ -34,7 +34,39 @@ $str = philter($unsafe_input)
 	->toString();
 ```
 
-Refer to the [Reference](https://indgy.github.io/philter/reference/index.html) to view the available filters.
+### Available filters
+
+[`allow(String $chars)`](https://indgy.github.io/philter/reference/#allow)
+ - Allow only the characters in \$chars
+
+[`alpha()`](https://indgy.github.io/philter/reference/#alpha) - Allow only a-z
+
+[`alphanum()`](https://indgy.github.io/philter/reference/#alphanum) - Allow only a-z and 0-9
+
+[`ascii()`](https://indgy.github.io/philter/reference/#ascii) - Allow only ASCII chars (32-127), transliterating where possible
+
+[`between(Int $min, Int $max)`](https://indgy.github.io/philter/reference/#between) - Allow values between min and max inclusive
+
+[`contains(String $match)`](https://indgy.github.io/philter/reference/#contains) - Allow values containing \$match
+
+[`cut(Int $length)`](https://indgy.github.io/philter/reference/#cut) - Cut string to \$length
+
+[`digits()`](https://indgy.github.io/philter/reference/#digits) - Allow only 0-9
+
+[`in(Array $items)`](https://indgy.github.io/philter/reference/#in) - Allow if in \$items
+
+[`max(Int $max)`](https://indgy.github.io/philter/reference/#max) - Allow only if less than or equal to \$max
+
+[`min(Int $min)`](https://indgy.github.io/philter/reference/#min) - Allow only if greater than or equal to \$min
+
+[`numeric()`](https://indgy.github.io/philter/reference/#numeric) - Allow only if numeric, e.g. currency string
+
+[`trim()`](https://indgy.github.io/philter/reference/#trim) - Trim characters from beginning and end *(see also `ltrim()` and `rtrim()`)*
+
+[`utf8()`](https://indgy.github.io/philter/reference/#utf8) - Convert to UTF-8 transliterating where possible
+
+
+Refer to the [Reference](https://indgy.github.io/philter/reference/index.html) for more detail on the filters.
 
 ## Custom filters
 Define custom filters using the `apply()` method with a closure. The closure will be passed the current input value and expects it, or null to be returned.
