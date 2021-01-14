@@ -179,6 +179,19 @@ Pass in the character to trim as the first argument:
 "abcdef" = philter("/abcdef/")->trim("/")->toString();
 ```
 
+### utf8()
+Converts the input into valid UTF-8 transliterating any invalid characters:
+
+```php
+"abcdéf" = philter("abcdéf")->uft8()->toString();
+```
+
+Optionally ignore any invalid characters, these will be removed:
+
+```php
+"abcdéf" = philter("abcdéf")->uft8($ignore=true)->toString();
+```
+
 
 ## Numeric filters
 
