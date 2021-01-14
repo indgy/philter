@@ -34,8 +34,7 @@ $str = philter($unsafe_input)
 
 ### Available filters
 
-[`allow(String $chars)`](https://indgy.github.io/philter/reference/#allow)
- - Allow only the characters in \$chars
+[`allow(String $chars)`](https://indgy.github.io/philter/reference/#allow) - Allow only the characters in \$chars
 
 [`alpha()`](https://indgy.github.io/philter/reference/#alpha) - Allow only a-z
 
