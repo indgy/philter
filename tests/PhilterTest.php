@@ -11,7 +11,7 @@ class PhilterTest extends \PHPUnit\Framework\TestCase
     public function testShouldUseFunction()
     {
         $str = 'this is philter';
-        $this->assertEquals($str, philter($str)->toString());
+        $this->assertEquals($str, philter($str, $raw=true)->toString());
     }
     /**
      *  @dataProvider provideNonScalarValues
@@ -28,4 +28,9 @@ class PhilterTest extends \PHPUnit\Framework\TestCase
             'Object' => [new \StdClass],
         ];
     }
+    
+    // public function testShouldRemoveUnprintableCharacters()
+    // {
+    //
+    // }
 }
