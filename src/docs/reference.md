@@ -131,15 +131,6 @@ Pass in additional allowed characters as the first argument:
 "+15556677" = philter("+1 555 6677")->digits("+\s")->toString();
 ```
 
-### email()
-Removes any characters that should not be in an email address:
-
-```php
-"user@example.com" = philter("[user]@!!example!!.com")->email()->toString();
-```
-Note: This is a simple filter, but probably stricter than the built in filter_var() method
-
-
 ### in()
 Ensures the input matches a value contained in the array:
 
