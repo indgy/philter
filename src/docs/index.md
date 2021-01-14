@@ -12,15 +12,15 @@ composer require indgy/philter
 ```
 
 ## Getting started
-Create a new Philter instance passing in the untrusted input, then combine filters for the untrusted input to pass through and finally call `toFloat()`, `toInt()` or `toString()` to get the filtered and now trusted input.
+Create a new Philter instance passing in the untrusted input, then combine filters for the untrusted input to pass through and finally call [`toBool()`](https://indgy.github.io/philter/reference/#toBool), [`toFloat()`](https://indgy.github.io/philter/reference/#toFloat), [`toInt()`](https://indgy.github.io/philter/reference/#toInt) or [`toString()`](https://indgy.github.io/philter/reference/#toString) to get the filtered and now trusted input.
 
 ```php
 use \Indgy\Philter;
 
 $f = new Philter($unsafe_input);
 $str = $f->in(['safe','string','options'])
-	->default('safe')
-	->toString();
+    ->default('safe')
+    ->toString();
 ```
 
 There is also a handy shortcut function to return a new Philter instance:
@@ -29,15 +29,14 @@ There is also a handy shortcut function to return a new Philter instance:
 use function \Indgy\philter;
 
 $str = philter($unsafe_input)
-	->in(['safe','string','options'])
-	->default('safe')
-	->toString();
+    ->in(['safe', 'string', 'options'])
+    ->default('safe')
+    ->toString();
 ```
 
 ### Available filters
 
-[`allow(String $chars)`](https://indgy.github.io/philter/reference/#allow)
- - Allow only the characters in \$chars
+[`allow(String $chars)`](https://indgy.github.io/philter/reference/#allow) - Allow only the characters in \$chars
 
 [`alpha()`](https://indgy.github.io/philter/reference/#alpha) - Allow only a-z
 
@@ -73,10 +72,16 @@ Define custom filters using the `apply()` method with a closure. The closure wil
 
 ```php
 philter('Here we go.. ')->apply(function($v) {
-	// do your thing here
-	$v = $v.=  'I was philtered';
-	// always return $v or null
-	return $v;
+
+    // always skip filtering if $value is null
+    if (is_null($v)) return $v;
+
+    // do your thing here
+    $v = $v.=  'I was philtered';
+
+    // always return $v or null if it does not pass your filter criteria
+    return $v;
+
 })->toString();
 ```
 

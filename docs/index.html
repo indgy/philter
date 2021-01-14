@@ -99,7 +99,7 @@
 <pre><code class="language-sh">composer require indgy/philter
 </code></pre>
 <h2 id="getting-started">Getting started</h2>
-<p>Create a new Philter instance passing in the untrusted input, then combine filters for the untrusted input to pass through and finally call <code>toFloat()</code>, <code>toInt()</code> or <code>toString()</code> to get the filtered and now trusted input.</p>
+<p>Create a new Philter instance passing in the untrusted input, then combine filters for the untrusted input to pass through and finally call <a href="https://indgy.github.io/philter/reference/#toBool"><code>toBool()</code></a>, <a href="https://indgy.github.io/philter/reference/#toFloat"><code>toFloat()</code></a>, <a href="https://indgy.github.io/philter/reference/#toInt"><code>toInt()</code></a> or <a href="https://indgy.github.io/philter/reference/#toString"><code>toString()</code></a> to get the filtered and now trusted input.</p>
 <pre><code class="language-php">use \Indgy\Philter;
 
 $f = new Philter($unsafe_input);
@@ -111,18 +111,39 @@ $str = $f-&gt;in(['safe','string','options'])
 <pre><code class="language-php">use function \Indgy\philter;
 
 $str = philter($unsafe_input)
-    -&gt;in(['safe','string','options'])
+    -&gt;in(['safe', 'string', 'options'])
     -&gt;default('safe')
     -&gt;toString();
 </code></pre>
-<p>Refer to the <a href="https://indgy.github.io/philter/reference/index.html">Reference</a> to view the available filters.</p>
+<h3 id="available-filters">Available filters</h3>
+<p><a href="https://indgy.github.io/philter/reference/#allow"><code>allow(String $chars)</code></a> - Allow only the characters in \$chars</p>
+<p><a href="https://indgy.github.io/philter/reference/#alpha"><code>alpha()</code></a> - Allow only a-z</p>
+<p><a href="https://indgy.github.io/philter/reference/#alphanum"><code>alphanum()</code></a> - Allow only a-z and 0-9</p>
+<p><a href="https://indgy.github.io/philter/reference/#ascii"><code>ascii()</code></a> - Allow only ASCII chars (32-127), transliterating where possible</p>
+<p><a href="https://indgy.github.io/philter/reference/#between"><code>between(Int $min, Int $max)</code></a> - Allow values between min and max inclusive</p>
+<p><a href="https://indgy.github.io/philter/reference/#contains"><code>contains(String $match)</code></a> - Allow values containing \$match</p>
+<p><a href="https://indgy.github.io/philter/reference/#cut"><code>cut(Int $length)</code></a> - Cut string to \$length</p>
+<p><a href="https://indgy.github.io/philter/reference/#digits"><code>digits()</code></a> - Allow only 0-9</p>
+<p><a href="https://indgy.github.io/philter/reference/#in"><code>in(Array $items)</code></a> - Allow if in \$items</p>
+<p><a href="https://indgy.github.io/philter/reference/#max"><code>max(Int $max)</code></a> - Allow only if less than or equal to \$max</p>
+<p><a href="https://indgy.github.io/philter/reference/#min"><code>min(Int $min)</code></a> - Allow only if greater than or equal to \$min</p>
+<p><a href="https://indgy.github.io/philter/reference/#numeric"><code>numeric()</code></a> - Allow only if numeric, e.g. currency string</p>
+<p><a href="https://indgy.github.io/philter/reference/#trim"><code>trim()</code></a> - Trim characters from beginning and end <em>(see also <code>ltrim()</code> and <code>rtrim()</code>)</em></p>
+<p><a href="https://indgy.github.io/philter/reference/#utf8"><code>utf8()</code></a> - Convert to UTF-8 transliterating where possible</p>
+<p>Refer to the <a href="https://indgy.github.io/philter/reference/index.html">Reference</a> for more detail on the filters.</p>
 <h2 id="custom-filters">Custom filters</h2>
 <p>Define custom filters using the <code>apply()</code> method with a closure. The closure will be passed the current input value and expects it, or null to be returned.</p>
 <pre><code class="language-php">philter('Here we go.. ')-&gt;apply(function($v) {
+
+    // always skip filtering if $value is null
+    if (is_null($v)) return $v;
+
     // do your thing here
     $v = $v.=  'I was philtered';
-    // always return $v or null
+
+    // always return $v or null if it does not pass your filter criteria
     return $v;
+
 })-&gt;toString();
 </code></pre>
 <h2 id="documentation">Documentation</h2>
@@ -182,5 +203,5 @@ $str = philter($unsafe_input)
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-01-14 14:26:11.225883+00:00
+Build Date UTC : 2021-01-14 15:07:46.295843+00:00
 -->

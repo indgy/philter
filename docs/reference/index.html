@@ -94,6 +94,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#trim">trim()</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#utf8">utf8()</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#numeric-filters">Numeric filters</a>
@@ -249,6 +251,13 @@ true === $filter-&gt;toBool();
 </code></pre>
 <p>Pass in the character to trim as the first argument:</p>
 <pre><code class="language-php">&quot;abcdef&quot; = philter(&quot;/abcdef/&quot;)-&gt;trim(&quot;/&quot;)-&gt;toString();
+</code></pre>
+<h3 id="utf8">utf8()</h3>
+<p>Converts the input into valid UTF-8 transliterating any invalid characters:</p>
+<pre><code class="language-php">&quot;abcdéf&quot; = philter(&quot;abcdéf&quot;)-&gt;uft8()-&gt;toString();
+</code></pre>
+<p>Optionally ignore any invalid characters, these will be removed:</p>
+<pre><code class="language-php">&quot;abcdéf&quot; = philter(&quot;abcdéf&quot;)-&gt;uft8($ignore=true)-&gt;toString();
 </code></pre>
 <h2 id="numeric-filters">Numeric filters</h2>
 <p>The following filters expect the input to be numeric.</p>

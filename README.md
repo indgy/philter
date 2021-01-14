@@ -10,7 +10,7 @@ composer require indgy/philter
 ```
 
 ## Getting started
-Create a new Philter instance passing in the untrusted input, then combine filters for the untrusted input to pass through and finally call [`toFloat()`](https://indgy.github.io/philter/reference/#toFloat), [`toInt()`](https://indgy.github.io/philter/reference/#toInt) or [`toString()`](https://indgy.github.io/philter/reference/#toString) to get the filtered and now trusted input.
+Create a new Philter instance passing in the untrusted input, then combine filters for the untrusted input to pass through and finally call [`toBool()`](https://indgy.github.io/philter/reference/#toBool), [`toFloat()`](https://indgy.github.io/philter/reference/#toFloat), [`toInt()`](https://indgy.github.io/philter/reference/#toInt) or [`toString()`](https://indgy.github.io/philter/reference/#toString) to get the filtered and now trusted input.
 
 ```php
 use \Indgy\Philter;
