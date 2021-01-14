@@ -547,4 +547,4 @@ class Philter
 function philter($var, Bool $raw=false): Philter {
     return new Philter($var, $raw);
 }
-// $v = filter_var((string) $v, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+
