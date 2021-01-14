@@ -1,6 +1,6 @@
 {
     "name": "indgy/philter",
-    "description": "A fluent input sanitiser",
+    "description": "A fluent input sanitiser with no dependencies",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -10,7 +10,9 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "PHP": "^7.1"
+    },
     "autoload": {
         "psr-4": {
             "Indgy\\": "src/"
