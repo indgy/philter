@@ -416,7 +416,7 @@ class Philter
     /**
      * Convert the string to UTF-8 transliterating if possible
      *
-     * @param Bool $ignore - Discard unrepresentable charcters
+     * @param Bool $ignore - Discard unrepresentable characters
      * @return Philter
      */
     public function utf8(Bool $ignore=false): Philter
