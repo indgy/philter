@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Indgy;
 
 use InvalidArgumentException;
+use Spoofchecker;
+
 
 /**
  * A PHP fluent input sanitiser.
@@ -280,6 +282,25 @@ class Philter
     {
         $this->filters[] = function($v) use ($default) {
             return (empty($v)) ? $default : $v;
+        };
+
+        return $this;
+    }
+    /**
+     * Transliterates a string if it has similar looking characters from unrelated UTF-8 character sets
+     *
+     * @return Philter
+     * @author Ian Grindley
+     */
+    public function despoof(Bool $transliterate = false): Philter
+    {
+        $this->filters[] = function($v) use ($transliterate) {
+            $check = new Spoofchecker();
+            if ($check->isSuspicious($v)) {
+                return ($transliterate)
+                    ? iconv("UTF-8", "ASCII//TRANSLIT//IGNORE", transliterator_transliterate('Any-Latin; Latin-ASCII', $v))
+                    : null;
+            }
         };
 
         return $this;
