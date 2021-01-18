@@ -39,7 +39,7 @@ class Philter
         $this->setVar($var);
         $this->filters = [];
         if (false === $raw) {
-            $this->stripUnprintable()->trim();
+            $this->utf8()->stripUnprintable()->trim();
         }
     }
     /**
