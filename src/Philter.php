@@ -86,7 +86,7 @@ class Philter
     public function toFloat(?Int $decimals=null): ?Float
     {
         if (is_null($decimals)) {
-            $decimals = 53;
+            $decimals = PHP_FLOAT_DIG;
         }
 
         return (float) sprintf("%.{$decimals}F", $this->var);
