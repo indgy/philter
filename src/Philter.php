@@ -33,6 +33,9 @@ class Philter
      */
     public function __construct($var, Bool $raw=false)
     {
+        mb_internal_encoding("UTF-8");
+        mb_regex_encoding("UTF-8");
+
         $this->setVar($var);
         $this->filters = [];
         if (false === $raw) {
@@ -126,7 +129,7 @@ class Philter
             // skip filtering null
             if (is_null($v)) return $v;
             
-            $regex = sprintf("/[^%s]/i", $allowed);
+            $regex = sprintf("/[^%s]/iu", $allowed);
             return preg_replace($regex, "", $v);
         };
 
@@ -201,7 +204,7 @@ class Philter
             // skip filtering null
             if (is_null($v)) return $v;
 
-            return preg_replace('/[\x00-\x1F\x7F]/u', '', mb_convert_encoding(strtr($v, $map), 'ascii'));
+            return preg_replace('/[\x00-\x1F\x7F]/u', '', strtr($v, $map));
         };
 
         return $this;
@@ -238,10 +241,10 @@ class Philter
             if (is_null($v)) return $v;
 
             if ($match_case) {
-                return (strstr($v, $match)) ? $v : null;
+                return (mb_strstr($v, $match)) ? $v : null;
             }
 
-            return (stristr($v, $match)) ? $v : null;
+            return (mb_stristr($v, $match)) ? $v : null;
         };
 
         return $this;
@@ -262,7 +265,7 @@ class Philter
             // skip filtering null
             if (is_null($v)) return $v;
 
-            return substr($v, 0 , $length);
+            return mb_substr($v, 0 , $length);
         };
 
         return $this;
@@ -302,7 +305,7 @@ class Philter
     {
         if (false === $match_case) {
             $values = array_map(function($value) {
-                return (is_string($value)) ? strtolower($value) : "$value";
+                return (is_string($value)) ? mb_strtolower($value) : "$value";
             }, $values);
         }
 
@@ -484,7 +487,7 @@ class Philter
         $this->filters[] = function($v) {
 
             $js = "(0x[0-9a-f]+|\\x[0-9a-f]+)";
-            $v = preg_replace("/$js/", "", $v);
+            $v = preg_replace("/$js/u", "", $v);
 
             return $v;
         };
