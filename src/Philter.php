@@ -207,6 +207,7 @@ class Philter
             if (is_null($v)) return $v;
 
             return preg_replace('/[\x00-\x1F\x7F]/u', '', strtr($v, $map));
+            // return preg_replace('/[\x00-\x1F\x7F]/u', '', mb_convert_encoding(strtr($v, $map), 'ascii'));
         };
 
         return $this;
