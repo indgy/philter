@@ -338,6 +338,16 @@ class Philter
         return $this;
     }
     /**
+     * Removes any non unicode alphabetical characters, allows accents
+     *
+     * @param String $allowed = An optional string containing individual allowed characters 
+     * @return Philter
+     */
+    public function letters(?String $allowed=null): Philter
+    {
+        return $this->allow(sprintf("\w%s", $allowed));
+    }
+    /**
      * Check the input is greater than the value of max, sets var to null if less than $Min
      *
      * @param Int $min - The lowest value allowed to pass through the filter
