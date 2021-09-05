@@ -414,13 +414,14 @@ class Philter
     }
     /**
      * Removes any characters not expected in a telephone number.
+     * Sometimes a comma is used as a pause
      *
      * @param String $allowed = An optional string containing individual allowed characters 
      * @return Philter
      */
     public function telephone(?String $allowed=null): Philter
     {
-        return $this->allow(sprintf('0-9ext\+\(\)\-\.\s%s', $allowed));
+        return $this->allow(sprintf('0-9ext\+\(\)\-\.\#\*\s%s', $allowed));
     }
     /**
      * Trims the leading and trailing characters from the variable
