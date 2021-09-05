@@ -413,6 +413,16 @@ class Philter
         return $this->allow(sprintf("0-9\-\+\,\.%s", $allowed));
     }
     /**
+     * Removes any characters not expected in a telephone number.
+     *
+     * @param String $allowed = An optional string containing individual allowed characters 
+     * @return Philter
+     */
+    public function telephone(?String $allowed=null): Philter
+    {
+        return $this->allow(sprintf('0-9ext\+\(\)\-\.\s%s', $allowed));
+    }
+    /**
      * Trims the leading and trailing characters from the variable
      *
      * @param String $char 
