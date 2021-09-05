@@ -317,6 +317,17 @@ class Philter
         return $this->allow(sprintf("0-9%s", $allowed));
     }
     /**
+     * Removes any characters not allowed in an email address.
+     * NB This will remove the backtick character
+     *
+     * @param String $allowed = An optional string containing individual allowed characters 
+     * @return Philter
+     */
+    public function email(): Philter
+    {
+        return $this->allow('0-9a-z\@\.\?\!\{\}\~\_\-\+\/\=\%\$\#\‘\|\^\*');
+    }
+    /**
      * Removes any non hex 0-9,A-F characters
      *
      * @param String $allowed = An optional string containing individual allowed characters 
