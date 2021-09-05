@@ -317,6 +317,16 @@ class Philter
         return $this->allow(sprintf("0-9%s", $allowed));
     }
     /**
+     * Removes any non hex 0-9,A-F characters
+     *
+     * @param String $allowed = An optional string containing individual allowed characters 
+     * @return Philter
+     */
+    public function hex(?String $allowed=null): Philter
+    {
+        return $this->allow(sprintf("0-9a-f%s", $allowed));
+    }
+    /**
      * Filter to check if the value is in the provided array of values
      *
      * @param Array $values - The values to check
