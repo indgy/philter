@@ -369,6 +369,16 @@ class Philter
         return $this->allow(sprintf("0-9\-\s\:%s", $allowed));
     }
     /**
+     * Removes any non latin characters
+     *
+     * @param String $allowed = An optional string containing individual allowed characters 
+     * @return Philter
+     */
+    public function latin(?String $allowed=null): Philter
+    {
+        return $this->allow(sprintf("\p{Latin}%s", $allowed));
+    }
+    /**
      * Removes any non unicode alphabetical characters, allows accents
      *
      * @param String $allowed = An optional string containing individual allowed characters 
