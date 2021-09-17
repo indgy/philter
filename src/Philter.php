@@ -359,6 +359,16 @@ class Philter
         return $this;
     }
     /**
+     * Removes any non ISO date characters not in 2000-01-01 01:01:01
+     *
+     * @param String $allowed = An optional string containing individual allowed characters 
+     * @return Philter
+     */
+    public function isoDate(?String $allowed=null): Philter
+    {
+        return $this->allow(sprintf("0-9\-\s\:%s", $allowed));
+    }
+    /**
      * Removes any non unicode alphabetical characters, allows accents
      *
      * @param String $allowed = An optional string containing individual allowed characters 
