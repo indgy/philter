@@ -253,6 +253,20 @@ class Philter
         return $this;
     }
     /**
+     * Allows typical content and punctuation characters
+     *
+     * @param String $allowed = A string containing individual allowed characters 
+     * @param String $match - The script to use
+     * @return Philter
+     */
+    public function content(String $allowed="", String $script="Latin"): Philter
+    {
+        return $this
+            ->utf8()
+            ->despoof()
+            ->allow(sprintf("\p{%s}0-9\\\(\)\/\$\£\€\s\!\%%\&\;\:\,\.\-\_\=\+\'\?\[\]\"%s", $script, $allowed));
+    }
+    /**
      * Shortens the length to $len characters
      *
      * @param Int $length - The number of characters to leave in the string
