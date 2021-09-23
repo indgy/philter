@@ -521,11 +521,11 @@ class Philter
     {
         $this->filters[] = function($v) use ($ignore) {
             // skip filtering null
-            if (is_null($v)) return $v;
+            if (is_null($v) OR ! is_scalar($v)) return $v;
 
             $opt = ($ignore) ? "IGNORE" : "TRANSLIT";
 
-            return iconv("UTF-8", "UTF-8//$opt", $v);
+            return iconv("UTF-8", "UTF-8//$opt", (string) $v);
         };
 
         return $this;
