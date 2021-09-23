@@ -568,12 +568,19 @@ class Philter
      *
      * @return Philter
      */
+    public function stripCode(): Philter
+    {
+        return $this->stripTags()
+            ->stripJavascript();
+    }
+    /**
+     * Removes all HTML tags
+     *
+     * @return Philter
+     */
     public function stripHtml(): Philter
     {
-        $this->filters[] = $this->stripTags();
-        $this->filters[] = $this->stripJavascript();
-
-        return $this;
+        return $this->stripTags();
     }
     /**
      * Removes all javascript
@@ -598,12 +605,12 @@ class Philter
      * @param String $allowed_tags - An optional set of tags to allow
      * @return Philter
      */
-    public function stripTags(?String $allowed_tags=null): Philter
+    public function stripTags(?String $allowed=null): Philter
     {
-        $this->filters[] = function($v) use ($allowed_tags) {
+        $this->filters[] = function($v) use ($allowed) {
             // remove html tags
             $default = '<a><b><br><dd><div><em><h1><h2><h3><h4><h5><h6><i><li><ol><p><small><span><strong><ul>';
-            $v = strip_tags($v, $tags.$allowed);
+            $v = strip_tags($v, $default.$allowed);
 
             return $v;
 
@@ -611,8 +618,6 @@ class Philter
 
         return $this;
     }
-
-
     /**
      * Removes any unprintable characters, this filter is processed by default
      *
