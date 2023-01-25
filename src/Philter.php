@@ -644,13 +644,4 @@ class Philter
     }
 }
 
-/**
- * Shortcut to return a new Philter instance
- * @param Scalar $var - The variable to be filtered
- * @param Boolean $raw - If true Philter will not Automatically trim spaces and remove unprintable characters
- * @return Indgy\Philter
- */
-function philter($var, Bool $raw=false): Philter {
-    return new Philter($var, $raw);
-}
 
