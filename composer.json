@@ -1,6 +1,7 @@
 {
     "name": "indgy/philter",
     "type": "library",
+    "version": "0.1.5",
     "minimum-stability": "stable",
     "description": "A fluent input sanitiser without dependencies",
     "keywords": ["input", "filter", "sanitiser", "sanitizer"],
